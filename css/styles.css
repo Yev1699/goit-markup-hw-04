@@ -67,6 +67,7 @@ img {
 .nav-list {
   gap: 40px;
 }
+
 .logo {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
@@ -97,6 +98,14 @@ img {
 .contact-link:hover,
 .contact-link:focus {
   color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link::after {
+  content: "";
+  border-radius: 2px;
+  margin-bottom: 20px;
+  width: 48px;
+  height: 4px;
 }
 .contact-link {
   line-height: 1.5;
@@ -112,8 +121,28 @@ img {
 }
 /*=========section hero========*/
 .hero {
-  background: #2e2f42;
+  position: relative;
+  background-image: url(/images/section-hero/dark-bg.png);
+  background-size: cover;
+  background-position: center;
   padding: 188px 0;
+  min-height: 600px;
+  min-width: 1440px;
+
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #2e2f42;
+  opacity: 0.7;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
 }
 .hero-title {
   font-size: 56px;
@@ -145,8 +174,22 @@ img {
 
 .button-main:is(:hover, :focus) {
   background: #404bbf;
+  transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/*benefits section*/
+/*==================================================benefits section==============================*/
+.benefits-container {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #f4f4fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .benefits-list {
   display: flex;
   gap: 24px;
@@ -166,7 +209,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
 }
-/* ------section team------*/
+/* ----------------------------------our team---------------------------------------*/
 .section-team {
   background: #f4f4fd;
 }
@@ -192,20 +235,45 @@ img {
   background: #fff;
   width: calc((100% - 72px) / 4);
   border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
 }
 .team-content {
   padding: 32px 0;
 }
-/*======portfolio======*/
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  fill: #4d5ae5;
+}
+.social-icon:hover,
+.social-icon:focus {
+  fill: #404bbf;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*==========================================portfolio========================================*/
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
 }
+.portfolio-item:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.item-img:hover,
+.item-img:focus {
+  background-image: url(/images/our-portfolio/banking-app-hover.jpg);
+}
 .portfolio-content {
   padding: 32px 16px;
   border: 1px solid #e7e9fc;
-  margin-bottom: 8px;
+  margin-bottom: none;
   border-top: none;
 }
 .portfolio-sub-title {
@@ -226,9 +294,16 @@ img {
   padding: 100px 0;
   background: #2e2f42;
 }
-.logo {
+.logo-footer {
   display: inline-block;
   margin-bottom: 16px;
+
+  font-family: "Raleway", sans-serif;
+
+  line-height: 1.16667;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #4d5ae5;
 }
 .page-footer .studio {
   color: #f4f4fd;
