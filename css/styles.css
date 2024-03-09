@@ -369,3 +369,25 @@ img {
   letter-spacing: 0.02em;
   color: #f4f4fd;
 }
+.social-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+.footer-container {
+  display: flex;
+  align-items: baseline;
+}
+.logo-wrapper {
+  margin-right: 120px;
+}
+.page-footer .social-list {
+  gap: 16px;
+}
+.page-footer .social-link:hover,
+.page-footer .social-link:focus {
+  background-color: #31d0aa;
+}
